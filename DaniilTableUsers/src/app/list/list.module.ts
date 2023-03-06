@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthComponent } from './auth.component';
 import { SharedModule } from '../shared.module';
+import { ListComponent } from './list.component';
 
 
 
 @NgModule({
     declarations: [
-        AuthComponent
+        ListComponent
     ],
     imports: [
         CommonModule,
@@ -15,7 +15,7 @@ import { SharedModule } from '../shared.module';
     ]
 })
 
-export class AuthModule { }
+export class ListModule { }
 
 
 
