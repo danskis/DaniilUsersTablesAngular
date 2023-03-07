@@ -1,1 +1,62 @@
-<p>list works!</p>
+<div class="container-fluid">
+        <mat-card>
+            <mat-card-header >
+                <span class="col-xs-7"></span><p> Wellcome {{emailName}}</p>
+            </mat-card-header>
+            <mat-card-content class="container">
+
+                <mat-card class="row">
+
+                    <mat-card-header>                        
+                        <h2>Filter by name</h2>
+                    </mat-card-header>
+        
+                    <mat-form-field class="full-width col-xs-8">
+                        <input matInput type="text" [(ngModel)]="inputValue" (ngModelChange)="filter()">
+                    </mat-form-field>
+
+                </mat-card>
+
+                <mat-card class="row">
+                    <mat-card-header>
+                        <h2>Table</h2>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                            <!-- Email Column -->
+                            <ng-container matColumnDef="email">
+                            <th mat-header-cell *matHeaderCellDef> Email </th>
+                            <td mat-cell *matCellDef="let element"> {{element.email }} </td>
+                            </ng-container>
+                        
+                            <!-- Nickname Column -->
+                            <ng-container matColumnDef="nickname">
+                            <th mat-header-cell *matHeaderCellDef> Nickname </th>
+                            <td mat-cell *matCellDef="let element"> {{element.nickname}} </td>
+                            </ng-container>
+                        
+                            <!-- Years Column -->
+                            <ng-container matColumnDef="years">
+                            <th mat-header-cell *matHeaderCellDef> Years </th>
+                            <td mat-cell *matCellDef="let element"> {{element.years}} </td>
+                            </ng-container>
+                        
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                        </table>
+
+                        <mat-paginator [pageSizeOptions]="[5, 10, 15]" [length]="dataSource.data.length" [pageSize]="5" showFirstLastButtons></mat-paginator>
+
+                    </mat-card-content>
+                </mat-card>
+                
+            </mat-card-content>
+        </mat-card>
+
+</div>
+
+

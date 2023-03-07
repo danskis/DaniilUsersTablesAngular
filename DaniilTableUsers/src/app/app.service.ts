@@ -1,12 +1,22 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 
+export interface TableInfo{
+    email: string,
+    nickname?: string,
+    years?: number
+}
 @Injectable({providedIn: 'root'})
 export class AppService {
 
-    sendEmail = new Subject();
-    
-    constructor(){}
-    
+    emailSubject = new BehaviorSubject<string>('');
+    Data;
+
+    constructor(private req: HttpClient){}
+
+    getEmails(): Observable<TableInfo[]>{
+        return this.req.get<TableInfo[]>('http://localhost:3000/emails');
+    }
 
 }

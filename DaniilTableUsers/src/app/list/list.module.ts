@@ -5,6 +5,7 @@ import { ListComponent } from './list.component';
 
 
 
+
 @NgModule({
     declarations: [
         ListComponent
