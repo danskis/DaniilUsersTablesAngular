@@ -67,7 +67,7 @@ export class ListComponent implements OnInit, OnDestroy{
   }
 
   filter(){
-    this.dataSource.filter = this.inputValue.toLowerCase();
+    this.dataSource.filter = this.inputValue.trim().toLowerCase();
   }
 
 }
