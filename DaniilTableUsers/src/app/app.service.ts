@@ -4,8 +4,8 @@ import { BehaviorSubject, Observable } from "rxjs";
 
 export interface TableInfo{
     email: string,
-    nickname?: string,
-    years?: number
+    title: string,
+    content: string
 }
 @Injectable({providedIn: 'root'})
 export class AppService {

@@ -17,6 +17,8 @@ export class AuthComponent implements OnInit {
 
   onSubmit(form: NgForm){
 
+    sessionStorage.setItem('email', form.value.email);
+
     this.appService.emailSubject.next(form.value.email);
 
     this.router.navigate(['list']);
