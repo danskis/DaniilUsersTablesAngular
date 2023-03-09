@@ -11,8 +11,6 @@ export interface TableInfo{
 export class AppService {
 
     emailSubject = new BehaviorSubject<string>('');
-    Data;
-
     constructor(private req: HttpClient){}
 
     getEmails(): Observable<TableInfo[]>{
